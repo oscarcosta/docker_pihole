@@ -10,7 +10,7 @@ services:
       - 53
       - 80
     environment:
-      TZ: "YOUR_TIMEZONE"
+      TZ: "America/Sao_Paulo"
       WEBPASSWORD: "yourpassword"
       DNS1: 1.1.1.1
       DNS2: 8.8.8.8
