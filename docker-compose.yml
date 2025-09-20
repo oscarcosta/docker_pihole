@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  
+  pihole:
+    image: pihole/pihole:latest
+    container_name: pihole
+    network_mode: "host"  # Needed for DNS on all interfaces
+    environment:
+      TZ: "YOUR_TIMEZONE"
+      WEBPASSWORD: "yourpassword"
+      DNS1: 1.1.1.1
+      DNS2: 8.8.8.8
+    volumes:
+      - ./pihole_data/etc-pihole:/etc/pihole
+      - ./pihole_data/etc-dnsmasq.d:/etc/dnsmasq.d
+      - ./pihole_data/custom-dns:/etc/dnsmasq.d/custom
+    restart: unless-stopped
