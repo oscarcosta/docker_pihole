@@ -6,10 +6,10 @@ services:
     image: pihole/pihole:latest
     container_name: pihole
     network_mode: "host"  # Needed for DNS on all interfaces
-    expose: # used for documentation; ignored in host mode
-      - "53/tcp"
-      - "53/udp"
-      - "80/tcp"
+    ports: # used for documentation; ignored in host mode
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "80:80/tcp"
     environment:
       TZ: "YOUR_TIMEZONE"
       WEBPASSWORD: "yourpassword"
