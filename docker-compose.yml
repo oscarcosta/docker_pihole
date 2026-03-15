@@ -11,14 +11,11 @@ services:
       - ./pihole_data/etc-pihole:/etc/pihole
       - ./pihole_data/etc-dnsmasq.d:/etc/dnsmasq.d
     networks:
-      pihole_home_macvlan:
+      pihole_lan_macvlan:
         ipv4_address: ${PIHOLE_HOME_IP}
-      pihole_lab_macvlan:
-        ipv4_address: ${PIHOLE_LAB_IP}
     restart: unless-stopped
 
 networks:
-  pihole_home_macvlan:
+  pihole_lan_macvlan:
     external: true
-  pihole_lab_macvlan:
-    external: true
+  
