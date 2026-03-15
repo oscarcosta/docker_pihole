@@ -12,8 +12,9 @@ docker network create -d macvlan \
   pihole_lan_macvlan
 ``` 
 
-1. Configure `.env` file with your custom settings.
-2. Run `docker compose up -d` to start the container.
+2. Configure `.env` file with your custom settings.
+
+3. Run `docker compose up -d` to start the container.
 
 ## Pi-Hole Update
 
